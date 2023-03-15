@@ -1,0 +1,26 @@
+
+.userbox{
+position: absolute;
+top: 30px;
+right: 30px;
+    display: flex;
+flex-direction: row;
+column-gap: 5px;
+justify-content: center;
+align-items: center;
+background-color: #f7f7f8;
+padding: 10px 25px;
+border-radius: 25px;
+box-shadow: 5px 5px 6px 0px rgba(225, 207, 207, 0.726);
+}
+.userbox img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+.username{
+    font-size: 19px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
