@@ -4,11 +4,21 @@
     box-sizing: border-box;
    
 }
+/* *{
+    transition: 0.8s;
+} */
 .main-nav{
+    position: absolute;
+    display:flex;
+    transition:all 1s 2s ease-in-out;
+    flex-direction: column;
+
+    row-gap: 10px;
   width:170px;
   height: 100vh;
   background-color: #5d44f8;
   overflow: hidden;
+  box-shadow: -8px -8px 9px rgba(99, 99, 99, 0.696);
 }
 .logo{
     width: 180px;
@@ -36,22 +46,74 @@ font-weight: 300px;
     flex-direction: row;
     column-gap: 10px;
     padding: 8px;
+    cursor: pointer;
 }
-.op img{
-    filter: invert(1);
-}
+
 .dash{
     width: 30px;
     margin-left: -5px;
 }
 .op:hover{
-
-    background-color: white;
+    
+    filter: invert(1);
+    background-color: black;
     border-top-left-radius: 60px;
     border-bottom-left-radius: 60px;
-    color: black;
+    color:white;
+    
+}
+.cross{
+    display: none;
+}
+.phone-nav{
+    background-color:#5d44f8;
+ height: 60px;
+ display: flex;
+ width: 100vw;
+ position: absolute;
+ flex-direction: row;
+ column-gap: 230px;
+ display: none;
+ cursor: pointer;
+}
+.phone-logo{
+    width: 100px;
+    
+    height: 100px;
+    margin-top:-18px;
+}
+.hbgicon{
+    width: 40px;
+    height: 40px;
+    margin-top: 13px;
+    position:absolute;
+    right: 7px;
 }
 
+@media screen and (max-width:500px){
+    .phone-nav{
+        display: flex;
+    }
+    .main-nav{
+    right: 0px;
+    display: none;
+
+    }
+  
+    .cross{
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+        margin-left: 30px;
+        margin-top: 50px;
+    }
+    .logo{
+        display: none;
+    }
+    .options{
+        margin-top: 70px;
+    }
+}
 
 
 
