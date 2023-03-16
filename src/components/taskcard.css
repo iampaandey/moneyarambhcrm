@@ -1,0 +1,30 @@
+.card{
+    display: inline-flex;
+    flex-wrap: wrap;
+    column-gap: 70px;
+    row-gap: 10px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #f7f7f8;
+    padding: 30px 120px;
+    box-shadow: 5px 5px 6px 0px rgba(225, 207, 207, 0.726);
+
+}
+
+.btn{
+    background-color: #ecedee;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+.card:hover{
+    box-shadow: 2px 2px 4px 0px #5d44f8;
+
+}
+.green{
+    background-color: rgba(51, 227, 51, 0.689);
+}
+.red{
+    background-color: rgba(255, 0, 0, 0.779);
+}

@@ -8,7 +8,7 @@
     transition: 0.8s;
 } */
 .main-nav{
-    position: absolute;
+    position: fixed;
     display:flex;
     transition:all 1s 2s ease-in-out;
     flex-direction: column;

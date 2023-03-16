@@ -9,18 +9,48 @@ column-gap: 5px;
 justify-content: center;
 align-items: center;
 background-color: #f7f7f8;
-padding: 10px 25px;
+padding: 4px 20px;
 border-radius: 25px;
 box-shadow: 5px 5px 6px 0px rgba(225, 207, 207, 0.726);
 }
 .userbox img{
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
+    margin-left: -12px;
 }
 .username{
     font-size: 19px;
     letter-spacing: 1px;
+    margin-left: 6px;
     font-weight: 500;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.arrow{
+    margin-top: 5px;
+}
+.user-op{
+    position: absolute;
+    z-index: 10;
+    right: 44px;
+    top: 78px;
+    background-color: #f7f7f8;
+    padding: 8px 20px;
+    border-radius: 25px;
+    box-shadow: 3px 3px 5px 0px rgba(225, 207, 207, 0.726);
+
+}
+.log{
+    position: relative;
+    top: 2px;
+}
+@media screen and (max-width:500px) {
+    .userbox{
+        top: 80px;
+        right: 10px;
+    }
+    .user-op{
+        top: 130px;
+        right: 20px;
+    }
 }
