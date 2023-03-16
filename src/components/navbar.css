@@ -19,6 +19,7 @@
   background-color: #5d44f8;
   overflow: hidden;
   box-shadow: -8px -8px 9px rgba(99, 99, 99, 0.696);
+  z-index: 10;
 }
 .logo{
     width: 180px;
