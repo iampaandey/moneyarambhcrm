@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+.err{
+  color: red;
+}
+#bt1{
+background-color: #282c34;
+}
+#bt1:hover{
+  color: black;
+  background-color: white;
+}
+#bt2{
+  background-color: rgb(244, 57, 57);
+}
+#bt2:hover{
+  color: black;
+  background-color: white;
+}
