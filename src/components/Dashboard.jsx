@@ -1,10 +1,9 @@
 import React from 'react'
 import './dashboard.css'
-import stockGif from '../images/stock.gif'
+import dsh from "../images/dsh.png"
 const Dashboard = () => {
   return (
-    <>
-    <h2>Dashboard</h2>
+    <div className='mn'>
     <div className="main-dash">
         <div className="greet">
             <span className='welcome'>Welcome,</span> 
@@ -14,10 +13,10 @@ const Dashboard = () => {
         </div>
         <div className="stock">
 
-            <img src={stockGif} alt="" />
+            <img src={dsh} alt=""  />
         </div>
     </div>
-    </>
+    </div>
     
     
     )

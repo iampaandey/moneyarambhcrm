@@ -1,46 +1,68 @@
-import React from 'react'
-import './navbar.css'
-import logo from '../images/logo.png'
-import admin from "../images/Admin.png"
-import task from "../images/task.png"
-import dashboard from "../images/dashboard.png"
-import cross from "../images/cross.png"
-import  hbg from "../images/hbg.png"
+import React, { useState } from 'react';
+import {
+  MDBNavbar,
+  MDBContainer,
+  MDBIcon,
+  MDBNavbarNav,
+  MDBNavbarItem,
+  MDBNavbarLink,
+  MDBNavbarToggler,
+  MDBNavbarBrand,
+  MDBCollapse
+} from 'mdb-react-ui-kit';
+  import logo from '../images/logo.png'
 
-const Navbar = () => {
-   const showOption = ()=>{
-    document.getElementById("main-nav").style.display="flex";
-    // document.getElementById("main-nav").style.right="0px";
-    document.getElementById("main-nav").style.transition="3s";
+  import "./navbar.css"
+ const Navbar = () => {
+	const handleAc=(idx)=>{
+		const opt = document.getElementsByClassName("op")
+		Array.from(opt).map((e)=>{
+			e.classList.remove("acc")
+		})
+		console.log(opt[idx])
+		opt[idx].classList.add("acc")
+		console.log(opt[idx])
 
-    // document.body.style.filter="blur(4.5px)"
-   }
-   const hideOptions = ()=>{
-    document.getElementById("main-nav").style.display="none";
-
-   }
-
-  return (
-    <>
-    <div className="phone-nav">
-      <img src={logo} alt="logophone" className='phone-logo'/>
-      <img src={hbg} alt="hbgicon" className='hbgicon' onClick={()=>{showOption()}}/>
-    </div>
-     <div className="main-nav" id='main-nav'>
-       <img src={logo} alt="logo" className='logo'/>
-       <img src={cross} alt="cross" className='cross' onClick={()=>{hideOptions()}}/>
-       <div className="options">
-        <div  className='op'>
-            <img src={dashboard} alt="dshlogo" className='dash nimg'/>
-           <h4>Dashboard</h4> </div>
-       <div className='op'>  <img src={admin} alt="adminlogo" /><h4>Admin</h4></div>
-        <div className='op'><img src={task} alt="tasklogo" />   <h4>Tasks</h4></div>
-       </div>
-    </div>
-    
-    </>
-   
-  )
-}
-
-export default Navbar
+	}
+	const [showNavColor, setShowNavColor] = useState(false);
+	return (
+		<>
+		<MDBNavbar expand='lg' light className='nav-main' >
+        <MDBContainer fluid>
+          <MDBNavbarBrand href='#'>
+			
+			<img className='logo' src={logo} alt="" />
+		  </MDBNavbarBrand>
+          <MDBNavbarToggler
+            type='button'
+            data-target='#navbarColor02'
+            aria-controls='navbarColor02'
+            aria-expanded='false'
+            aria-label='Toggle navigation'
+            onClick={() => setShowNavColor(!showNavColor)}
+          >
+            <MDBIcon icon='bars' fas />
+          </MDBNavbarToggler>
+          <MDBCollapse show={showNavColor} navbar>
+            <MDBNavbarNav className='me-auto mb-2 mb-lg-0 nvv' >
+              <MDBNavbarItem className='acc op' onClick={()=>handleAc(0)}>
+                <MDBNavbarLink aria-current='page' href='#' >
+                  Dashboard
+                </MDBNavbarLink>
+              </MDBNavbarItem>
+              <MDBNavbarItem className='op' onClick={()=>handleAc(1)}>
+                <MDBNavbarLink href='#'>Leads</MDBNavbarLink>
+              </MDBNavbarItem >
+              <MDBNavbarItem className='op' onClick={()=>handleAc(2)}>
+                <MDBNavbarLink href='#'>About</MDBNavbarLink>
+              </MDBNavbarItem>
+              <MDBNavbarItem className='op' onClick={()=>handleAc(3)}>
+                <MDBNavbarLink href='#'>Admin</MDBNavbarLink>
+              </MDBNavbarItem>
+            </MDBNavbarNav>
+          </MDBCollapse>
+        </MDBContainer>
+      </MDBNavbar>
+	  </>
+	)}
+  export default Navbar

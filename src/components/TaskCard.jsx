@@ -1,21 +1,27 @@
 import React, {  useState } from 'react'
 import './taskcard.css'
 import {BsFillTrash3Fill} from 'react-icons/bs'
-const TaskCard = ({phone,status}) => {
+import {
+  MDBBtn
+} from 'mdb-react-ui-kit';
+const TaskCard = ({phone,status,count}) => {
 const [flag,setFlag] = useState(status)
 
 
   return (
     <>
-      <div className='card'>
-        <div><h3>Phone No: </h3></div>
-        <div>{phone}</div>
-        <div><h3>Status :</h3></div>
-        <div className={` ${flag=== true ? "btn green" :"btn"}` }  onClick={(e)=>{setFlag(!flag)
-        }}>Picked</div>
-        <div className={`${flag ===false ?"btn red":"btn"}` }onClick={(e)=>{setFlag(!flag)
-        }}>Not Picked</div>
-        <div><BsFillTrash3Fill/></div>
+     
+      <div className="my-card">
+        <h4>Lead : {count}</h4>
+        <h3 className="ph">{phone}</h3>
+        <div className="my-btns">
+        <MDBBtn rounded className='mx-4' color='info'>
+          More 
+      </MDBBtn>
+      <MDBBtn rounded className='mx-4' color='danger'>
+          Delete
+      </MDBBtn>
+        </div>
       </div>
     </>
   )
