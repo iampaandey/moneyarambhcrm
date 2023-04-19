@@ -1,5 +1,6 @@
 
 import './App.css';
+import CustomerPopup from './components/CustomerPopup';
 // import Dashboard from './components/Dashboard';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
@@ -13,7 +14,8 @@ function App() {
      <Navbar/>
      <UserBox/>
      {/* <Dashboard/> */}
-     <TaskManager/>
+     {/* <TaskManager/> */}
+     <CustomerPopup/>
      {/* <TaskCard/> */}
      <Footer/>
 

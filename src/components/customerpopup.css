@@ -1,0 +1,39 @@
+.main-cstppup{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    position: relative;
+    top: 130px;
+   justify-content: justify;
+   align-items: center;
+    /* box-shadow: 5px 5px 6px 0px rgba(225, 207, 207, 0.726); */
+}
+.phone-no{
+    margin-left: 150px;
+}
+
+.textareaa{
+    width: 70vw;  
+    outline: none;
+    padding: 10px 20px;
+    font-size: 21px;
+    margin-left: 150px;
+    border-radius: 8px;
+     box-shadow: 5px 5px 6px 0px rgba(225, 207, 207, 0.726);
+}
+.btnn{
+    border-radius: 45px;
+    background-color: #8482FF;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    margin-left: 150px;
+}
+.btnn:hover{
+    background-color:whitesmoke;
+    color:black;
+    box-shadow:4px 4px 6px 0px rgba(120, 92, 205, 0.767);
+}
+.headingfeed{
+    margin-left: 150px;
+}
