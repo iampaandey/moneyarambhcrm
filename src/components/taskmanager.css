@@ -1,12 +1,12 @@
 .main-card{
   
     display: flex;
-    flex-direction: column;
-    row-gap: 0px;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 50px;
     justify-content: center;
     align-items: center;
-    position:relative;
-    top: 100px;
-    margin-left: 200px;
+    margin-top: 100px;
+    padding: 20px;
    
 }

@@ -1,24 +1,26 @@
-.card{
+.my-card{
     display: inline-flex;
-    flex-wrap: wrap;
-    column-gap: 70px;
-    row-gap: 10px;
-    margin-bottom: 30px;
+    flex-direction: row;
+    column-gap: 100px;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    background-color: #f7f7f8;
-    padding: 30px 120px;
+    background-color: #ffffff;
+    padding: 30px ;
     box-shadow: 5px 5px 6px 0px rgba(225, 207, 207, 0.726);
+    
 
 }
 
-.btn{
-    background-color: #ecedee;
-    padding: 5px 15px;
-    border-radius: 10px;
+.my-btns{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    justify-content: center;
+    align-items: center;
 }
-.card:hover{
+
+.my-card:hover{
     box-shadow: 2px 2px 4px 0px #5d44f8;
 
 }
@@ -27,4 +29,17 @@
 }
 .red{
     background-color: rgba(255, 0, 0, 0.779);
+}
+.ph{
+    font-size: 20px;
+    color: #5d44f8;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+#cdd{
+width: 200px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
 }

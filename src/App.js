@@ -2,7 +2,7 @@
 import './App.css';
 import './components/css/bootstrap.min.css'
 
-// import Dashboard from './components/Dashboard';
+import Dashboard from './components/Dashboard';
 import Footer from './components/Footer';
 import Login from './components/Login';
 import Navbar from './components/Navbar';
@@ -14,11 +14,11 @@ import UserBox from './components/UserBox';
 function App() {
   return (
     <>
-     {/* <Navbar/> */}
+     <Navbar/>
      {/* <UserBox/> */}
      {/* <Dashboard/> */}
-     {/* <TaskManager/> */}
-     <Login/>
+     <TaskManager/>
+     {/* <Login/> */}
      {/* <Signup/> */}
      {/* <TaskCard/> */}
      {/* <Footer/> */}

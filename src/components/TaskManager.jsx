@@ -1,6 +1,7 @@
 import React from 'react'
 import TaskCard from './TaskCard'
 import './taskmanager.css'
+import { MDBRow } from 'mdb-react-ui-kit'
 const TaskManager = () => {
     const custData= [
        {
@@ -29,15 +30,14 @@ const TaskManager = () => {
 
     
   return (
-    <>
-      <div className="main-card">
+    <div className='main-card'>
+
          {
-          custData.map((e)=>{
-            return <TaskCard phone={e.Phone} status={e.Status} />
+          custData.map((e,index)=>{
+            return <TaskCard phone={e.Phone} status={e.Status} count={index+1} />
           })
          }
-      </div>
-    </>
+    </div>
   )
 }
 
