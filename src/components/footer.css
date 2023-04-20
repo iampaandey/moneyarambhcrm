@@ -2,9 +2,8 @@
  background-color: black;
  color: white;
  text-align: center;
- position: fixed;
- bottom: 0;
- 
+ position: absolute;
+ margin-top: 10px;
  width: 100vw;
  
 

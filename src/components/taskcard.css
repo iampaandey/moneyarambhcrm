@@ -1,5 +1,6 @@
 .my-card{
     display: inline-flex;
+    flex-wrap: wrap;
     flex-direction: row;
     column-gap: 100px;
     justify-content: center;
@@ -42,4 +43,15 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
+}
+@media screen  and (max-width:683px){
+   .my-card{
+    column-gap: 10px;
+    padding: 15px;
+    margin: 20px 30px;
+   }
+   .my-btns{
+    margin-top: 10px;
+    column-gap: 40px;
+   }
 }

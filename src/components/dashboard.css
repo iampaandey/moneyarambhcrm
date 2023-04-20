@@ -30,6 +30,12 @@ width: 600px;
     color: rgb(77, 77, 231);
     margin-left: 10px;
 }
+.cards-handle{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 200px;
+    row-gap: 50px;
+}
 @media screen and (max-width:500px){
     .main-dash{
         margin-left: 10px;

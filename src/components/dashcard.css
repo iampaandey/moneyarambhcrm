@@ -1,0 +1,23 @@
+.main-dashCard{
+    display: flex;
+    background-color: #fff;
+    flex-direction: column;
+    row-gap: 8px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 6px 0px rgba(225, 207, 207, 0.726);
+    padding: 20px;
+    margin-bottom: 17px;
+}
+.custimg{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: #5d44f8 1px solid;
+}
+.main-dashCard:hover{
+    box-shadow: 2px 2px 4px 0px #5d44f8;
+    transform: scale(1.04);
+    transition: 1.4s ease-in-out;
+}

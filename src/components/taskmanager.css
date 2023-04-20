@@ -10,3 +10,10 @@
     padding: 20px;
    
 }
+
+@media screen  and (max-width:683px){
+    .main-card{
+        column-gap: 10px;
+        padding: 3px;
+    }
+}
