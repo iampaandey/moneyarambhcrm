@@ -7,8 +7,20 @@
     background-color: rgba(255, 255, 255, 0.702);
     box-shadow: 5px 5px 6px 0px rgba(225, 207, 207, 0.726);
     padding: 20px;
-    border-top: 3px rgba(255, 255, 255, 0.58) solid;
+    border-top: 3px #4c79d3 solid;
+    width: 350px;
+    background-color: #4c79d3;
+    color: white;
+    border-radius: 8px;
+}
+.para{
+    color: white;
 }
 .main-feed:hover{
     border-top: 3px rgba(27, 255, 27, 0.58) solid;
+}
+@media screen and (max-width:450px) {
+    .main-feed{
+    width: 250px;
+}
 }

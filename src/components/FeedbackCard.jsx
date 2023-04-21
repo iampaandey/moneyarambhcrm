@@ -6,7 +6,7 @@ const FeedbackCard = ({name,date,feed}) => {
     <div className="main-feed">
      <h5>{name}</h5> 
      <span>{date}</span>
-     <p>{feed}</p>
+     <p className='para'>{feed}</p>
      </div>
     </>
   )

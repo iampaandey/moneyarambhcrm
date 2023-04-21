@@ -21,10 +21,10 @@ function App() {
      {/* <Dashboard/> */}
      
      {/* <TaskManager/> */}
-     {/* <Login/> */}
+     <Login/>
      {/* <Signup/> */}
      {/* <TaskCard/> */}
-     <CustomerPopup/>
+     {/* <CustomerPopup/> */}
      {/* <Admin/> */}
      {/* <Footer/> */}
 

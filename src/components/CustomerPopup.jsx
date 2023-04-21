@@ -45,18 +45,32 @@ const CustomerPopup = () => {
         <div className="details">
           <input type="text" className='nmi' value={"Rakesh Khare"}  />
         <h2 className="phone-no">9893399032</h2>
+        <div>
+        <h6>Recall date</h6>
+        <input type="date" name="" id="" className='dt' />
+        </div>
+        <MDBBtn rounded className='mx-4' color='danger' >
+          Delete
+      </MDBBtn>
         </div>
       </div>
-   
-        <textarea name="feedback-cust" id="feedback-cust" className="textareaa" placeholder='Write the feedback recieved' cols="30" rows="5"></textarea>
-        <MDBBtn rounded className='mx-4' color='info' >
-          Submit
-      </MDBBtn>        <h4 className='headingfeed'>Previous Feedbacks</h4>
+      <div className="fd">
+        
+      <div className="comments">       
+      <h4 className='headingfeed'>Previous Feedbacks</h4>
        {
         feedData.map((e)=>{
           return <FeedbackCard  name={e.name} date={e.date} feed={e.feed}  />
         })
        }
+       </div>
+       <div className='tx'>
+        <textarea name="feedback-cust" id="feedback-cust" className="textareaa" placeholder='Write the feedback recieved' ></textarea>
+        <MDBBtn rounded className='mx-4' color='info' >
+          Submit
+      </MDBBtn> 
+      </div>
+       </div>
      </div>
     </>
   )
