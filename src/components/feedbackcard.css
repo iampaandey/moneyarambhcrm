@@ -1,13 +1,14 @@
 .main-feed{
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     row-gap: 10px;
     align-items: center;
     justify-content: center;
-    background-color: rgba(245, 245, 245, 0.929);
+    background-color: rgba(255, 255, 255, 0.702);
     box-shadow: 5px 5px 6px 0px rgba(225, 207, 207, 0.726);
-    margin-left: 200px;
-    margin-right: 50px;
-    padding: 10px 20px;
-    margin-bottom: 50px;
+    padding: 20px;
+    border-top: 3px rgba(255, 255, 255, 0.58) solid;
+}
+.main-feed:hover{
+    border-top: 3px rgba(27, 255, 27, 0.58) solid;
 }

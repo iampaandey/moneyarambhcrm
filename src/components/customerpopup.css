@@ -1,15 +1,61 @@
 .main-cstppup{
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
-    position: relative;
-    top: 130px;
-   justify-content: justify;
+    row-gap: 20px; 
+    margin-top: 50px;
+   justify-content: center;
    align-items: center;
     /* box-shadow: 5px 5px 6px 0px rgba(225, 207, 207, 0.726); */
 }
+.man{
+    width: 200px;
+    border-radius: 50%;
+    border: 1px solid;
+    border-left-color: green;
+    border-right-color: yellow;
+    border-top-color: red;
+    border-bottom-color:blue ;
+}
+.profile{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 50px;
+    row-gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff9f;
+    border-radius: 5px;
+        box-shadow: 5px 5px 6px 0px rgba(225, 207, 207, 0.726);
+        border-top: 3px solid rgb(255, 255, 255);
+}
+.profile:hover{
+    box-shadow:4px 4px 6px 0px rgba(120, 92, 205, 0.767);
+    border-top: 3px solid blue;
+    transform: translateY(-5px);
+    transition: 0.5s;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    justify-content: justify;
+    /* align-items: center; */
+}
+.nmi{
+    outline: none;
+    color: blue;
+    border-radius: 2px;
+    padding: 4px;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+}
 .phone-no{
-    margin-left: 150px;
+    margin-top: -20px;
+    letter-spacing: 2px;
+    color: rgba(81, 81, 81, 0.808);
+    font-weight: 600;
 }
 
 .textareaa{
@@ -17,9 +63,11 @@
     outline: none;
     padding: 10px 20px;
     font-size: 21px;
-    margin-left: 150px;
-    border-radius: 8px;
+    border-radius: 5px;
      box-shadow: 5px 5px 6px 0px rgba(225, 207, 207, 0.726);
+}
+.textareaa:focus{
+    border-bottom: 4px blue solid;
 }
 .btnn{
     border-radius: 45px;
@@ -27,7 +75,6 @@
     padding: 10px 20px;
     color: white;
     cursor: pointer;
-    margin-left: 150px;
 }
 .btnn:hover{
     background-color:whitesmoke;
@@ -35,5 +82,8 @@
     box-shadow:4px 4px 6px 0px rgba(120, 92, 205, 0.767);
 }
 .headingfeed{
-    margin-left: 150px;
+    color: #1b17ffcf;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-top: 40px;
 }

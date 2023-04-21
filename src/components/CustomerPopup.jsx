@@ -1,6 +1,8 @@
 import React from 'react'
 import './customerpopup.css'
 import FeedbackCard from './FeedbackCard'
+import man from "../images/man.jpg"
+import { MDBBtn } from 'mdb-react-ui-kit'
 const CustomerPopup = () => {
   const feedData=[
       {
@@ -38,10 +40,18 @@ const CustomerPopup = () => {
   return (
     <>
      <div className="main-cstppup">
+      <div className="profile">
+        <img src={man} alt="man" className='man' />
+        <div className="details">
+          <input type="text" className='nmi' value={"Rakesh Khare"}  />
         <h2 className="phone-no">9893399032</h2>
+        </div>
+      </div>
+   
         <textarea name="feedback-cust" id="feedback-cust" className="textareaa" placeholder='Write the feedback recieved' cols="30" rows="5"></textarea>
-        <div className="btnn">Submit</div>
-        <h4 className='headingfeed'>Previous Feedbacks</h4>
+        <MDBBtn rounded className='mx-4' color='info' >
+          Submit
+      </MDBBtn>        <h4 className='headingfeed'>Previous Feedbacks</h4>
        {
         feedData.map((e)=>{
           return <FeedbackCard  name={e.name} date={e.date} feed={e.feed}  />

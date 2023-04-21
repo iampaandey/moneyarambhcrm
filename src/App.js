@@ -1,6 +1,8 @@
 
 import './App.css';
+import Admin from './components/Admin';
 import './components/css/bootstrap.min.css'
+import CustomerPopup from './components/CustomerPopup';
 
 import Dashboard from './components/Dashboard';
 import Footer from './components/Footer';
@@ -22,7 +24,9 @@ function App() {
      {/* <Login/> */}
      {/* <Signup/> */}
      {/* <TaskCard/> */}
-     <Footer/>
+     <CustomerPopup/>
+     {/* <Admin/> */}
+     {/* <Footer/> */}
 
     </>
   );
