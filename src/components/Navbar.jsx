@@ -13,6 +13,7 @@ import {
   import logo from '../images/logo.png'
 
   import "./navbar.css"
+import { Link } from 'react-router-dom';
  const Navbar = () => {
 	const handleAc=(idx)=>{
 		const opt = document.getElementsByClassName("op")
@@ -45,19 +46,17 @@ import {
           </MDBNavbarToggler>
           <MDBCollapse show={showNavColor} navbar>
             <MDBNavbarNav className='me-auto mb-2 mb-lg-0 nvv' >
-              <MDBNavbarItem className='acc op' onClick={()=>handleAc(0)}>
-                <MDBNavbarLink aria-current='page' href='#' >
-                  Dashboard
-                </MDBNavbarLink>
+              <MDBNavbarItem  onClick={()=>handleAc(0)}>
+              <Link to="/" className='acc op'>Dashboard</Link>
               </MDBNavbarItem>
-              <MDBNavbarItem className='op' onClick={()=>handleAc(1)}>
-                <MDBNavbarLink href='#'>Leads</MDBNavbarLink>
+              <MDBNavbarItem  onClick={()=>handleAc(1)}>
+              <Link to="/leads" className='op'>Leads</Link>
               </MDBNavbarItem >
-              <MDBNavbarItem className='op' onClick={()=>handleAc(2)}>
-                <MDBNavbarLink href='#'>About</MDBNavbarLink>
+              <MDBNavbarItem  onClick={()=>handleAc(2)}>
+              <Link to="/about" className='op'>About</Link>
               </MDBNavbarItem>
-              <MDBNavbarItem className='op' onClick={()=>handleAc(3)}>
-                <MDBNavbarLink href='#'>Admin</MDBNavbarLink>
+              <MDBNavbarItem  onClick={()=>handleAc(3)}>
+              <Link to="/admin" className='op'>Admin</Link>
               </MDBNavbarItem>
             </MDBNavbarNav>
           </MDBCollapse>

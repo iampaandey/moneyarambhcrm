@@ -4,6 +4,7 @@ import {BsFillTrash3Fill} from 'react-icons/bs'
 import {
   MDBBtn
 } from 'mdb-react-ui-kit';
+import { Link } from 'react-router-dom';
 const TaskCard = ({phone,status,count}) => {
 const [flag,setFlag] = useState(status)
 
@@ -16,7 +17,7 @@ const [flag,setFlag] = useState(status)
         <h3 className="ph">{phone}</h3>
         <div className="my-btns">
         <MDBBtn rounded className='mx-4' color='info'>
-          More 
+         <Link to="leadinfo">More </Link> 
       </MDBBtn>
       <MDBBtn rounded className='mx-4' color='danger'>
           Delete

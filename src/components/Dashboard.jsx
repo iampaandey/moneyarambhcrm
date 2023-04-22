@@ -31,7 +31,7 @@ const Dashboard = () => {
         <div className="greet">
             <span className='welcome'>Welcome,</span> 
             <span className='user-name'>Alexander</span>
-            <p className='para'>Market Awaits You !</p>
+            <p>Market Awaits You !</p>
 
         </div>
         <div className="stock">

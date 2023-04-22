@@ -44,13 +44,23 @@ box-shadow: 5px 5px 6px 0px rgba(225, 207, 207, 0.726);
     position: relative;
     top: 2px;
 }
-@media screen and (max-width:500px) {
+@media screen and (max-width: 450px) and (min-width: 280px) {
+  .userbox{
+    right: 112px;
+    top:17px;
+  }
+  .user-op{
+    top: 90px;
+    right: 135px;
+}
+}
+@media screen and (max-width: 992px) and (min-width: 451px){
     .userbox{
-        top: 80px;
-        right: 10px;
+        right: 150px;
+        top: 17px;
     }
     .user-op{
-        top: 130px;
-        right: 20px;
+        top: 90px;
+        right: 170px;
     }
 }

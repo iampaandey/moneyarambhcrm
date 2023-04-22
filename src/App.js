@@ -1,9 +1,10 @@
 
 import './App.css';
+import React from 'react';
 import Admin from './components/Admin';
 import './components/css/bootstrap.min.css'
 import CustomerPopup from './components/CustomerPopup';
-
+import {Switch,Route, BrowserRouter, Router } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import Footer from './components/Footer';
 import Login from './components/Login';
@@ -16,17 +17,27 @@ import UserBox from './components/UserBox';
 function App() {
   return (
     <>
+    <Switch>
+    <React.Fragment>
      <Navbar/>
-     {/* <UserBox/> */}
-     {/* <Dashboard/> */}
-     
-     {/* <TaskManager/> */}
-     <Login/>
-     {/* <Signup/> */}
-     {/* <TaskCard/> */}
-     {/* <CustomerPopup/> */}
-     {/* <Admin/> */}
-     {/* <Footer/> */}
+   <Route exact path='/'><Dashboard/></Route>
+   <Route exact path='/leads'><TaskManager/></Route> 
+   <Route exact path='/admin'><Admin/></Route>
+   <Route exact path="/leadinfo"><CustomerPopup/></Route>
+   <UserBox/>
+
+
+
+      <Footer/> 
+    </React.Fragment>
+    </Switch>
+
+
+
+
+
+
+    
 
     </>
   );
