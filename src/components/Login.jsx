@@ -3,6 +3,10 @@ import isvg from "../images/iv.svg"
 import './css/style.css'
 import { useFormik } from 'formik'
 import * as Yup from "yup"
+import { useDispatch} from 'react-redux'
+import { toast } from "react-toastify"
+import { useHistory } from 'react-router-dom'
+import { login } from './redux/features/userSlice'
 
 
 
@@ -12,6 +16,8 @@ const Login = () => {
         email:"",
         password:"",
     }
+    const history = useHistory();
+    const dispatch = useDispatch();
     const loginSchema =Yup.object({
         email:Yup.string().email().required("Please enter an email"),
         password:Yup.string().min(6).required("Please enter a password"),
@@ -21,6 +27,9 @@ const Login = () => {
         validationSchema:loginSchema,
         onSubmit:(values)=>{
             console.log(values)
+            const formData = values;
+            dispatch(login({formData,history,toast}));
+            
         }
     })
   return (

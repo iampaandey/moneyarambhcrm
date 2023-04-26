@@ -13,17 +13,22 @@ import { Signup } from './components/Signup';
 // import TaskCard from './components/TaskCard';
 import TaskManager from './components/TaskManager';
 import UserBox from './components/UserBox';
-
+import { ToastContainer } from 'react-toastify'
 function App() {
   return (
     <>
     <Switch>
     <React.Fragment>
      <Navbar/>
+     <ToastContainer/>
    <Route exact path='/'><Dashboard/></Route>
    <Route exact path='/leads'><TaskManager/></Route> 
    <Route exact path='/admin'><Admin/></Route>
    <Route exact path="/leadinfo"><CustomerPopup/></Route>
+   <Route exact path="/login"><Login/></Route>
+   <Route exact path="/signup"><Signup/></Route>
+
+
    <UserBox/>
 
 
