@@ -8,7 +8,6 @@ export const login =createAsyncThunk("/login",async({formData,history,toast})=>{
         if(response.data._id){
            toast.success("Welcome! Raghav");
            history.push("/");
-           console.log(response.data)
            return response.data;   
    
         }
@@ -16,7 +15,7 @@ export const login =createAsyncThunk("/login",async({formData,history,toast})=>{
            toast.error("Invalid Credentials")
         }
     } catch (error) {
-        console.log(error);
+         console.log(error)
         toast.error(error.message);
     }
 })
@@ -31,7 +30,7 @@ export const register =createAsyncThunk("/register",async({formData,history,toas
            toast.error("Invalid Credentials")
         }
     } catch (error) {
-        console.log(error);
+        console.log(error)
         toast.error(error.message);
     }
 })
@@ -239,7 +238,7 @@ export const adminLogin =createAsyncThunk("/adminlogin",async({formData,history,
         if(response.data.token){
            toast.success("Welcome Maalik!");
            history.push("/admin");
-           console.log(response.data.token)
+         
            return response.data;   
    
         }

@@ -93,7 +93,7 @@ setTimeout(()=>{
   },[data,phone])
  
    useEffect(()=>{
-    console.log(leadData)
+ 
     setName(leadData?.name)
 
    },[leadData])

@@ -32,7 +32,7 @@ const history=useHistory()
  setRem(pdt?.filter((e)=>{
     return e?.phone!==phone
   }))
-  console.log(rem)
+
   
 
   }
@@ -49,9 +49,9 @@ const history=useHistory()
   },[plead])
   useEffect(()=>{
     const dt = sessionStorage.getItem("leads")
-    console.log(dt)
+  
     if(dt===null ){
-      console.log("hey")
+     
       const email=JSON?.parse(localStorage.getItem("user"))?.email;
      const formData={
       email:email
@@ -80,11 +80,11 @@ const history=useHistory()
   }
   
     useEffect(()=>{
-      console.log(data)
+   
       if(data?.length===4 && !fg)
     {
       setFg(true)
-      console.log("hey2")
+    
       const email=JSON?.parse(localStorage.getItem("user")).email;
      const formData={
       email:email
@@ -93,8 +93,7 @@ const history=useHistory()
     }
     else if(data?.length===0)
     {
-      console.log("heyy")
-      console.log(JSON.parse(sessionStorage.getItem("leads")))
+
       setData(JSON.parse(sessionStorage.getItem("leads")))
       setFg(false);
     }

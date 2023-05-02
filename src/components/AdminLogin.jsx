@@ -27,7 +27,7 @@ const AdminLogin = () => {
         initialValues:init,
         validationSchema:loginSchema,
         onSubmit:(values)=>{
-            console.log(values)
+       
             const formData = values;
             dispatch(adminLogin({formData,history,toast}));
             

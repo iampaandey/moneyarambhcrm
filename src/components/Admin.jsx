@@ -70,7 +70,7 @@ const Admin = () => {
         dispatch(getNextLead({formData,toast}))
     }
     useEffect(()=>{
-        console.log(employe)
+       
     },[employe])
     const handlePrev=()=>{
         const formData={
@@ -97,7 +97,7 @@ const Admin = () => {
             phone:val,
             token:JSON.parse(sessionStorage.getItem("token"))
         }
-        console.log(formData)
+   
         dispatch(SearchLead({formData,toast}))
     }
     const handleSubmit=async(e)=>{
@@ -110,7 +110,7 @@ const Admin = () => {
             const obj = XLSX.utils.sheet_to_json(worksheet)
 
             await addLead({obj:obj, token:JSON.parse(sessionStorage.getItem("token"))})
-            console.log(obj)
+           
         }
     }
     const handleDelete=(phone)=>{
@@ -118,7 +118,7 @@ const Admin = () => {
             phone:phone,
             token:JSON.parse(sessionStorage.getItem("token"))
         }
-        console.log(formData)
+  
         dispatch(delLead2({formData,toast}))
         setData(data.filter((e)=>{
             return e.phone!==phone

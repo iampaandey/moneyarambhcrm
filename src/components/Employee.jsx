@@ -26,7 +26,7 @@ const Employee = () => {
         
       },[admin])
       useEffect(()=>{
-        console.log(flag2)
+      
         if(flag2===false)
         history.push('/adminlogin')      
     },[flag2])
@@ -56,7 +56,7 @@ const Employee = () => {
         setData(pemployee)
     },[pemployee])
     useEffect(()=>{
-       console.log(data?.done,flag);
+    
     },[flag]);
     
     const handleDelete=(val)=>{
@@ -65,7 +65,7 @@ const Employee = () => {
             ephone:phone,
             token:JSON.parse(sessionStorage.getItem("token"))
         }
-        console.log(formData)
+  
         dispatch(delLead({formData,toast}))
         setTimeout(()=>{
 

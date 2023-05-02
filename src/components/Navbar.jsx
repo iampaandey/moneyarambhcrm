@@ -19,9 +19,9 @@ import { Link } from 'react-router-dom';
 		Array.from(opt).map((e)=>{
 			return e.classList.remove("acc")
 		})
-		console.log(opt[idx])
+		
 		opt[idx].classList.add("acc")
-		console.log(opt[idx])
+
 
 	}
 	const [showNavColor, setShowNavColor] = useState(false);

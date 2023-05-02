@@ -26,7 +26,7 @@ const List = () => {
         setData(user)
     },[user])
     useEffect(()=>{
-        console.log(data)
+     
     },[data])
     const handleDelete=(phone)=>{
         const formData={

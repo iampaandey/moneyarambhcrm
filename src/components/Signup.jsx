@@ -38,7 +38,7 @@ export const Signup = () => {
       initialValues:init,
       validationSchema:validate,
       onSubmit:(values,action)=>{
-        console.log(values)
+   
         const formData={
           fname: values.fname,
   lname: values.lname,
@@ -61,6 +61,7 @@ useEffect(()=>{
 
 
   return (
+    <div className="sngp">
     <div className="container mt-3">
     <div className="row">
       <div className="col-md-5">
@@ -99,7 +100,7 @@ useEffect(()=>{
          <input autoComplete='false' className={`form-control shadow-none ${touched.cpassword && errors.cpassword && 'is-invalid'}`} type="password" name="cpassword" value={values.cpassword} onBlur={handleBlur} onChange={handleChange} />
         <p className="err">{touched.cpassword&&errors.cpassword?errors.cpassword:null}</p>
          </div>
-         <MDBBtn type='submit' rounded >Submit</MDBBtn>
+         <MDBBtn type='submit mb-3' rounded >Submit</MDBBtn>
         </form>  
         </div>
     
@@ -108,6 +109,7 @@ useEffect(()=>{
           <img className="img-fluid w-100" src={rocketImg} alt=""/>
         </div>
       </div>
+    </div>
     </div>
   )
 }

@@ -3,6 +3,7 @@ import './userbox.css'
 import {BsChevronDown, BsChevronUp, BsBoxArrowInRight} from 'react-icons/bs'
 import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import userimg from '../images/user.png'
 const UserBox = () => {
   const [name,setName]=useState();
   const {user,admin}=useSelector((state)=>({...state.user}))
@@ -18,7 +19,7 @@ const UserBox = () => {
 
   },[])
   useEffect(()=>{
-    console.log(name)
+   
   },[name])
   useEffect(()=>{
   if(user!==null){
@@ -42,11 +43,11 @@ const UserBox = () => {
   return (
     <>
         <div className="userbox">
-            <img src="http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcSStEXQ52SE6txqvnwfAyOZ-dt6fkkBqzcir0RaZkoG54dYK7UByieR90Nb18ON4rdZ6VyDNVuQdk1kXik " alt="" />
+            <img src={userimg} alt="" />
             <span className='username' onClick={()=>{setArrow(!arrow)}}>{name}</span> <span className='arrow' onClick={()=>{setArrow(!arrow)}}>{arrow ? <BsChevronDown/>:<BsChevronUp/>}</span>
             
         </div>{
-        !arrow&&<div className='user-op' id=''>
+        !arrow && (localStorage.getItem("user")!==null || sessionStorage.getItem("token")!==null) &&<div className='user-op' id=''>
               <span onClick={()=>handleLogout()}>Log Out <span className='log'><BsBoxArrowInRight/></span>
               </span>
               
