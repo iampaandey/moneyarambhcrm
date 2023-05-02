@@ -34,9 +34,16 @@ width: 600px;
     display: flex;
     flex-wrap: wrap;
     column-gap: 200px;
+    justify-content: center;
+    align-items: center;
     row-gap: 50px;
+    margin-bottom: 50px;
+}
+.progress{
+    max-width: 200px;
 }
 @media screen and (max-width:500px){
+    
     .main-dash{
         margin-left: 10px;
         margin-right: 10px;

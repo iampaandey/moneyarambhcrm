@@ -1,5 +1,4 @@
 import React from 'react'
-import kashtomar from '../images/kashtomar.png'
 import './dashcard.css'
 const DashCard = ({title,count,imagge}) => {
   return (

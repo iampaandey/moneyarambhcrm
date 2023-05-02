@@ -12,6 +12,7 @@ background-color: #f7f7f8;
 padding: 4px 20px;
 border-radius: 25px;
 box-shadow: 5px 5px 6px 0px rgba(225, 207, 207, 0.726);
+cursor: pointer;
 }
 .userbox img{
     width: 35px;
@@ -31,6 +32,7 @@ box-shadow: 5px 5px 6px 0px rgba(225, 207, 207, 0.726);
 }
 .user-op{
     position: absolute;
+    cursor: pointer;
     z-index: 10;
     right: 44px;
     top: 78px;

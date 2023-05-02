@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './dashboard.css'
 import kashtomar from '../images/kashtomar.png'
 import positivefeedback from '../images/positiveFeedback.png'
@@ -6,22 +6,36 @@ import negativefeedback from '../images/negativeFeedback.png'
 import dsh from "../images/dsh.png"
 
 import DashCard from './DashCard'
+import { useHistory } from 'react-router-dom'
 const Dashboard = () => {
+  const pos=JSON.parse(localStorage.getItem("user"))?.pos;
+  const tot=JSON.parse(localStorage.getItem("user"))?.total+pos;
+  const name=JSON.parse(localStorage.getItem("user"))?.fname;
+  const neg=tot-pos;
+    const history=useHistory();
+useEffect(()=>{
+if(localStorage.getItem("user")===null)
+{
+    history.push('/login')
+}
+},[])
+
+
     const indInfo=[
         {
             title:"Customer Handled",
-            count:"345",
+            count:tot,
             imgg:kashtomar
              
         },
         {
             "title":"Positive FeedBacks",
-            "count":"354",
+            "count":pos,
             imgg:positivefeedback
         },
         {
             "title":"Negative FeedBacks",
-            "count":"245",
+            "count":neg,
             imgg:negativefeedback
         }
     ]
@@ -30,7 +44,7 @@ const Dashboard = () => {
     <div className="main-dash">
         <div className="greet">
             <span className='welcome'>Welcome,</span> 
-            <span className='user-name'>Alexander</span>
+            <span className='user-name'>{name}</span>
             <p>Market Awaits You !</p>
 
         </div>

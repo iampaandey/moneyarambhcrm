@@ -6,12 +6,12 @@ import * as Yup from "yup"
 import { useDispatch} from 'react-redux'
 import { toast } from "react-toastify"
 import { useHistory } from 'react-router-dom'
-import { login } from './redux/features/userSlice'
+import { adminLogin} from './redux/features/userSlice'
 
 
 
 
-const Login = () => {
+const AdminLogin = () => {
     const init={
         email:"",
         password:"",
@@ -21,7 +21,7 @@ const Login = () => {
     const loginSchema =Yup.object({
         email:Yup.string().email().required("Please enter an email"),
         password:Yup.string().min(6).required("Please enter a password"),
-        token:Yup.string().min(7,'Token must contain 7 characters').max(7,"Token must contain 7 characters").required("Token is required feild")
+      
     })
     const {values,handleChange,handleBlur,handleSubmit,errors,touched}= useFormik({
         initialValues:init,
@@ -29,7 +29,7 @@ const Login = () => {
         onSubmit:(values)=>{
             console.log(values)
             const formData = values;
-            dispatch(login({formData,history,toast}));
+            dispatch(adminLogin({formData,history,toast}));
             
         }
     })
@@ -58,13 +58,6 @@ const Login = () => {
                 <input type="password" name='password' placeholder='Password' className="form-control" autoComplete='false' id="password" value={values.password} onChange={handleChange} onBlur={handleBlur}/>
                 <p className='err'>{touched.password&&errors.password?errors.password:null}</p>
               </div>
-              <div className="form-group last mb-4">
-                <input type="password" name='token' className="form-control" placeholder='Token' autoComplete='false' id="token" value={values.token} onChange={handleChange} onBlur={handleBlur}/>
-                <p className='err'>{touched.token&&errors.token?errors.token:null}</p>
-              </div>
-              
-      
-
               <button type="submit"  className="btn btn-block btn-primary" id='bn'>
                 Sign In
                 </button>
@@ -83,4 +76,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default AdminLogin

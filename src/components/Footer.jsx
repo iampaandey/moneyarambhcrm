@@ -4,7 +4,7 @@ const Footer = () => {
   
   return (
     <>
-    <div className="footer">
+    <div className="footer fixed-bottom">
         <p>
             All right are reserved  © MoneyArambh Pvt ltd
         </p>

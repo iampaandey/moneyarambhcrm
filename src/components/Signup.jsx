@@ -1,6 +1,5 @@
-import React from 'react';
-import { ErrorMessage, useFormik} from 'formik';
-import { TextField } from './TextField';
+import React, { useEffect } from 'react';
+import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import rocketImg from '../images/rocket.png'
 import { useDispatch} from 'react-redux'
@@ -23,7 +22,11 @@ export const Signup = () => {
     email: Yup.string()
       .email('Email is invalid')
       .required('Email is required'),
-    phone:Yup.string().min(10,"Phone no must be 10 digits").max(10,"Phone no must be 10 digits").required("Phone is required feild").matches(/^[0-9]+$/, "Must be only digits")
+    phone:Yup.string().min(10,"Phone no must be 10 digits").max(10,"Phone no must be 10 digits").required("Phone is required feild").matches(/^[0-9]+$/, "Must be only digits"),
+    password:Yup.string().min(6,'Password should contain 6 characters').required("Password is required feild"),
+    cpassword:Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match').required("confirm Password is required feild")
+
+
     })
   const init = {
     fname: '',
@@ -36,11 +39,27 @@ export const Signup = () => {
       validationSchema:validate,
       onSubmit:(values,action)=>{
         console.log(values)
-        const formData=values;
+        const formData={
+          fname: values.fname,
+  lname: values.lname,
+  email: values.email,
+  phone: values.phone,
+  password: values.password,
+        };
         dispatch(register({formData,history,toast}))
         action.resetForm()
       }
     })
+
+useEffect(()=>{
+ if(sessionStorage.getItem("token")===null){
+    history.push('/adminlogin')
+ }
+},[])
+
+
+
+
   return (
     <div className="container mt-3">
     <div className="row">
@@ -69,6 +88,16 @@ export const Signup = () => {
           <label htmlFor="phone">Phone</label>
          <input autoComplete='false' className={`form-control shadow-none ${touched.phone && errors.phone && 'is-invalid'}`} type="text" name="phone" value={values.phone} onBlur={handleBlur} onChange={handleChange} />
         <p className="err">{touched.phone&&errors.phone?errors.phone:null}</p>
+         </div>
+         <div className="mb-2">
+          <label htmlFor="phone">Password</label>
+         <input autoComplete='false' className={`form-control shadow-none ${touched.password && errors.password && 'is-invalid'}`} type="password" name="password" value={values.password} onBlur={handleBlur} onChange={handleChange} />
+        <p className="err">{touched.password&&errors.password?errors.password:null}</p>
+         </div>
+         <div className="mb-2">
+          <label htmlFor="phone">Confirm Password</label>
+         <input autoComplete='false' className={`form-control shadow-none ${touched.cpassword && errors.cpassword && 'is-invalid'}`} type="password" name="cpassword" value={values.cpassword} onBlur={handleBlur} onChange={handleChange} />
+        <p className="err">{touched.cpassword&&errors.cpassword?errors.cpassword:null}</p>
          </div>
          <MDBBtn type='submit' rounded >Submit</MDBBtn>
         </form>  

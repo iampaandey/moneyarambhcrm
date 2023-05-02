@@ -3,10 +3,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    row-gap: 10px;
 }
 .addl{
     margin-top: 50px;
     color: rgba(0, 0, 0, 0.487);
+}
+.file-name{
+    color: #5d44f8;
 }
 .frm{
     margin-top: 10px;
@@ -28,12 +32,19 @@
 }
 .ch{
     margin-top: 8px;
+    margin-left: -95px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 .fd{
     display: inline-flex;
-    flex-direction: row;
-    column-gap: 4px;
+    flex-direction: row ;
+    column-gap: 2px;
     align-items: center;
+   
     justify-content: center;
     background-color: white;
     padding: 10px 40px;
@@ -47,9 +58,11 @@
     align-items: center;
 }
 #fl{
-    width: 150px;
-    margin-top: -45px;
+    width: 200px;
+    height: 50px;
+    margin-top: -68px;
     opacity: 0;
+    cursor: pointer;
 }
 .wimg{
     width: 200px;
@@ -106,4 +119,25 @@
     font-weight: 800;
     font-size: 18px;
     letter-spacing: 1px;
+}
+.leadss{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    height: 500px;
+    overflow-y: scroll;
+    box-shadow: 5px 5px 12px rgba(34, 34, 34, 0.834);
+    border-radius: 20px;
+    padding: 10px;
+}
+.btns{
+    display: flex;
+    flex-direction: row;
+    column-gap: 400px;
+}
+@media screen and (max-width:500px) {
+    .btns{
+
+        column-gap: 100px;
+    }
 }

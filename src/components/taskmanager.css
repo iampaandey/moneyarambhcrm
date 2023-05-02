@@ -1,4 +1,4 @@
-.main-card{
+.main-card,.mainn-card{
   
     display: flex;
     flex-wrap: wrap;
@@ -6,9 +6,11 @@
     column-gap: 50px;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
     padding: 20px;
-   
+    
+}
+.mainn-card{
+    margin-bottom: 50px;
 }
 
 @media screen  and (max-width:683px){

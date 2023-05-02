@@ -1,16 +1,32 @@
 .my-card{
     display: inline-flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    column-gap: 100px;
+    flex-direction: column;
+    row-gap: 2px;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
     background-color: #ffffff;
-    padding: 30px ;
+    padding: 10px ;
     box-shadow: 5px 5px 6px 0px rgba(225, 207, 207, 0.726);
     
 
+}
+.tg{
+    background-color:  rgba(215, 254, 156, 0.565);
+    color: black;
+    border-radius: 25px;
+    padding: 5px 10px;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.811);
+    
+}
+.tgs{
+    width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1px;
+    column-gap: 2px;
 }
 
 .my-btns{
@@ -21,7 +37,7 @@
     align-items: center;
 }
 
-.my-card:hover{
+.my-card:hover,.m-card:hover{
     box-shadow: 2px 2px 4px 0px #5d44f8;
 
 }
@@ -43,6 +59,65 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
+}
+.tags{
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+
+}
+.chip{
+    border-radius: 25px;
+    color: black;
+    background-color:  rgba(197, 252, 115, 0.884);
+    padding: 4px 8px;
+    cursor: pointer;
+}
+.chip:hover{
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.706);
+    transform: translateY(-3px) ;
+    transition: 0.4s;
+
+}
+.m-card{
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+    box-shadow: 5px 5px 6px 0px rgba(225, 207, 207, 0.726);
+    padding: 20px;
+    border-radius: 25px;
+}
+.his{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnss{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 40px;
+    max-width: 300px;
+}
+.tgt{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+.tar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
 }
 @media screen  and (max-width:683px){
    .my-card{

@@ -5,7 +5,6 @@ import {
   MDBIcon,
   MDBNavbarNav,
   MDBNavbarItem,
-  MDBNavbarLink,
   MDBNavbarToggler,
   MDBNavbarBrand,
   MDBCollapse
@@ -18,7 +17,7 @@ import { Link } from 'react-router-dom';
 	const handleAc=(idx)=>{
 		const opt = document.getElementsByClassName("op")
 		Array.from(opt).map((e)=>{
-			e.classList.remove("acc")
+			return e.classList.remove("acc")
 		})
 		console.log(opt[idx])
 		opt[idx].classList.add("acc")
@@ -47,7 +46,7 @@ import { Link } from 'react-router-dom';
           <MDBCollapse show={showNavColor} navbar>
             <MDBNavbarNav className='me-auto mb-2 mb-lg-0 nvv' >
               <MDBNavbarItem  onClick={()=>handleAc(0)}>
-              <Link to="/" className='acc op'>Dashboard</Link>
+              <Link to="/" className='op'>Dashboard</Link>
               </MDBNavbarItem>
               <MDBNavbarItem  onClick={()=>handleAc(1)}>
               <Link to="/leads" className='op'>Leads</Link>
@@ -57,6 +56,9 @@ import { Link } from 'react-router-dom';
               </MDBNavbarItem>
               <MDBNavbarItem  onClick={()=>handleAc(3)}>
               <Link to="/admin" className='op'>Admin</Link>
+              </MDBNavbarItem>
+              <MDBNavbarItem  onClick={()=>handleAc(4)}>
+              <Link to="/list" className='op'>My List</Link>
               </MDBNavbarItem>
             </MDBNavbarNav>
           </MDBCollapse>

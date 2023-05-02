@@ -5,7 +5,11 @@
     margin-top: 50px;
    justify-content: center;
    align-items: center;
+   margin-bottom: 50px;
     /* box-shadow: 5px 5px 6px 0px rgba(225, 207, 207, 0.726); */
+}
+.progress{
+    width: 600px;
 }
 .man{
     width: 200px;
