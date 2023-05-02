@@ -52,7 +52,7 @@ import { Link } from 'react-router-dom';
               <Link to="/leads" className='op'>Leads</Link>
               </MDBNavbarItem >
               <MDBNavbarItem  onClick={()=>handleAc(2)}>
-              <Link to="/about" className='op'>About</Link>
+              <Link to="/aboutus" className='op'>About</Link>
               </MDBNavbarItem>
               <MDBNavbarItem  onClick={()=>handleAc(3)}>
               <Link to="/admin" className='op'>Admin</Link>

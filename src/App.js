@@ -17,6 +17,7 @@ import { ToastContainer } from 'react-toastify'
 import List from './components/List';
 import Employee from './components/Employee';
 import AdminLogin from './components/AdminLogin';
+import { About } from './components/About';
 function App() {
   return (
     <>
@@ -33,7 +34,7 @@ function App() {
    <Route exact path="/signup"><Signup/></Route>
    <Route exact path="/list"><List/></Route>
   <Route exact path="/adminlogin"><AdminLogin/></Route>
-   
+   <Route exact path="/aboutus"><About/></Route>
 
    <UserBox/>
 
