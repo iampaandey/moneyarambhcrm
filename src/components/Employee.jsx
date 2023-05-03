@@ -4,16 +4,22 @@ import { MDBBtn, MDBInput, MDBProgress, MDBProgressBar } from 'mdb-react-ui-kit'
 import { useHistory, useParams } from 'react-router-dom'
 import TaskCard from './TaskCard'
 import WorkCard from './WorkCard'
+import plus from "../images/plus.webp"
+import img1 from "../images/img1.png"
+import * as XLSX from "xlsx"
 import { useDispatch, useSelector } from 'react-redux'
-import { addDone, delLead, partEmployee, targett} from './redux/features/userSlice'
+import { addDone, addPlead, delLead, partEmployee, targett} from './redux/features/userSlice'
 import { toast } from "react-toastify"
 
 const Employee = () => {
     const [data,setData]=useState()
+    const [name, setName] = useState(null)
     const [target,setTarget]=useState(0)
     const [done,setDone]=useState(0)
     const [flag,setFlag]=useState(false);
     const [flag2,setFlag2]=useState();
+    const [bdata, setBdata] = useState(null)
+    
     const params = useParams()
     const phone =params?.id?.slice(1);
     const dispatch=useDispatch();
@@ -100,6 +106,30 @@ const Employee = () => {
         setTarget(0);
         setFlag(!flag);
     }
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        if (bdata !== null) {
+            const workbook = XLSX.read(bdata, { type: "buffer" })
+            const workSheetName = workbook.SheetNames[0];
+            const worksheet = workbook.Sheets[workSheetName]
+            const obj = XLSX.utils.sheet_to_json(worksheet)
+            const formData={ obj: obj, token: JSON.parse(sessionStorage.getItem("token")),email:data?.email}
+            dispatch(addPlead({formData,toast}))
+
+        }
+    }
+    const handleChange = (e) => {
+        document.getElementById("fd").style.border = "2px solid #00ffca"
+        let file = e.target.files[0];
+        setName(file?.name)
+        if (file) {
+            let reader = new FileReader()
+            reader.readAsArrayBuffer(file)
+            reader.onload = (e) => {
+                setBdata(e.target.result)
+            }
+        }
+    }
   return (<>
     <div className='main-cstppup'>
 
@@ -125,7 +155,22 @@ const Employee = () => {
         </div>
         </div>
         <br />
-            
+        <h2 className="addl">Add Leads</h2>
+                    <div className='frm'>
+                        <img src={img1} alt="" className='img1' />
+                        <div className="fl">
+                            <div className="fd" id='fd'>
+                                <img src={plus} alt="" className='pl' />
+                                <h6 className='ch'>Choose Files</h6>
+
+                            </div>
+                            <h6 className='file-name'>{name}</h6>
+                            <input type="file" name="file" id="fl" onChange={handleChange} />
+                            <MDBBtn rounded className='mx-4' color='info' onClick={handleSubmit}>
+                                Submit
+                            </MDBBtn>
+                        </div>
+                        </div>
         
         <h3>{data?.fname}'s List</h3>
         {

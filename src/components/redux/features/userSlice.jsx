@@ -6,7 +6,7 @@ export const login =createAsyncThunk("/login",async({formData,history,toast})=>{
     try {
         const response =await api.login(formData);
         if(response.data._id){
-           toast.success("Welcome! Raghav");
+           toast.success(`Welcome ${response?.data?.fname}`);
            history.push("/");
            return response.data;   
    
@@ -250,6 +250,23 @@ export const adminLogin =createAsyncThunk("/adminlogin",async({formData,history,
         toast.error(error.message);
     }
 })
+export const addPlead =createAsyncThunk("/addplead",async({formData,toast})=>{
+    try {
+        const response =await api.addPlead(formData);
+               if(response?.data.message==="You are not an employee"){
+                   toast.error(response?.data?.message)
+               }
+               else{
+                toast.success(response?.data?.message)
+               }
+   
+       
+    } catch (error) {
+        console.log(error);
+        toast.error(error.message);
+    }
+})
+
 const userSlice=createSlice({
    name:"user",
    initialState:{

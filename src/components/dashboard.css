@@ -54,3 +54,16 @@ width: 600px;
 
     }
 }
+.tar{
+    margin-bottom: 50px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 6px 0px rgba(225, 207, 207, 0.726);
+
+}
+.tar:hover{
+    box-shadow: 2px 2px 4px 0px #5d44f8;
+    transform: scale(1.04);
+    transition: 1.4s ease-in-out;
+}
