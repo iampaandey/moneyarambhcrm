@@ -2,9 +2,10 @@ import {createAsyncThunk,createSlice} from "@reduxjs/toolkit";
 import * as api from '../api'
 
 
-export const login =createAsyncThunk("/login",async({formData,history,toast})=>{
+export const login =createAsyncThunk("/login",async({formData,history,toast},{rejectWithValue})=>{
     try {
         const response =await api.login(formData);
+        console.log(response)
         if(response.data._id){
            toast.success(`Welcome ${response?.data?.fname}`);
            history.push("/");
@@ -12,7 +13,9 @@ export const login =createAsyncThunk("/login",async({formData,history,toast})=>{
    
         }
         else{
+            console.log(response.data.message)
            toast.error("Invalid Credentials")
+           return rejectWithValue(response?.data?.message)
         }
     } catch (error) {
          console.log(error)
