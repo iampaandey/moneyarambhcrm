@@ -42,12 +42,13 @@ const UserBox = () => {
   const [arrow, setArrow] = useState(true);
   return (
     <>
-        <div className="userbox">
+   {  (localStorage.getItem("user")!==null || sessionStorage.getItem("token")!==null) && <div className="userbox">
             <img src={userimg} alt="" />
             <span className='username' onClick={()=>{setArrow(!arrow)}}>{name}</span> <span className='arrow' onClick={()=>{setArrow(!arrow)}}>{arrow ? <BsChevronDown/>:<BsChevronUp/>}</span>
             
-        </div>{
-        !arrow && (localStorage.getItem("user")!==null || sessionStorage.getItem("token")!==null) &&<div className='user-op' id=''>
+        </div>}
+        {
+        !arrow && (localStorage.getItem("user")!==null || sessionStorage.getItem("token")!==null) && <div className='user-op' id=''>
               <span onClick={()=>handleLogout()}>Log Out <span className='log'><BsBoxArrowInRight/></span>
               </span>
               
