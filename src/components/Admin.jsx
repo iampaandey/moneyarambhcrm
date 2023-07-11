@@ -3,12 +3,13 @@ import * as XLSX from "xlsx"
 import './admin.css'
 import { addLead } from './redux/api'
 import img1 from "../images/img1.png"
+import tkn from "../images/tkn.png"
 import { MDBBtn, MDBInput } from 'mdb-react-ui-kit'
 import plus from "../images/plus.webp"
 import Workercard from './Workercard'
 import { useDispatch, useSelector } from 'react-redux'
 import { toast } from "react-toastify"
-import { SearchLead, delLead, delLead2, getEmployee, getNextLead, getPrevLead } from './redux/features/userSlice'
+import { SearchLead, delLead, delLead2, getEmployee, getNextLead, getPrevLead, resettoken } from './redux/features/userSlice'
 import TaskCard from './TaskCard'
 import loader from '../images/79.gif'
 import Loader from './Loader'
@@ -16,16 +17,18 @@ import { Link, useHistory } from 'react-router-dom'
 
 
 const Admin = () => {
+    const { employee, allLead, plead, admin,logToken } = useSelector((state) => ({ ...state.user }))
     const [bdata, setBdata] = useState(null)
     const [name, setName] = useState(null)
     const [employe, setEmploye] = useState()
     const [data, setData] = useState(null)
     const [val, setVal] = useState("")
     const [lead, setLead] = useState(null)
+    const [logTokenn, setLogToken] = useState(logToken)
+
     const history = useHistory();
 
 
-    const { employee, allLead, plead, admin } = useSelector((state) => ({ ...state.user }))
     const dispatch = useDispatch();
 
 
@@ -46,6 +49,9 @@ const Admin = () => {
         if (sessionStorage.getItem("token") === null) {
             history.push('/adminlogin')
         }
+        if (sessionStorage.getItem("logToken") !== null) {
+            setLogToken(JSON.parse(sessionStorage.getItem("logToken")));
+        }
 
 
     }, [])
@@ -57,18 +63,17 @@ const Admin = () => {
             setData(allLead)
         if (plead)
             setLead(plead)
-    }, [employee, allLead, plead])
+        if(logToken)
+            setLogToken(logToken)
+    }, [employee, allLead, plead, logToken, lead, employe])
 
-    useEffect(() => { }, [lead])
     const handleNext = () => {
         const formData = {
             token: JSON.parse(sessionStorage.getItem("token"))
         }
         dispatch(getNextLead({ formData, toast }))
     }
-    useEffect(() => {
-
-    }, [employe])
+  
     const handlePrev = () => {
         const formData = {
             token: JSON.parse(sessionStorage.getItem("token"))
@@ -108,6 +113,12 @@ const Admin = () => {
 
         }
     }
+    const handleReset = ()=>{
+        const formData = {
+            token: JSON.parse(sessionStorage.getItem("token"))
+        }
+        dispatch(resettoken({formData,toast}))
+    }
     const handleDelete = (phone) => {
         const formData = {
             phone: phone,
@@ -125,6 +136,17 @@ const Admin = () => {
             {
 
                 <div className='mnn'>
+                    <h2 className="addl">Token</h2>
+                    <div className="frm1">
+                    <img src={tkn} alt="tkn" className='img2' />
+                    <div className="tkn">
+                    <h3>Your Token is</h3>
+                    <h4 className="bx">{logTokenn}</h4>
+                    <MDBBtn rounded className='mx-4 my -4' color='info' onClick={handleReset}>
+                               Reset
+                            </MDBBtn>
+                    </div>
+                    </div>
                     <h2 className="addl">Add Leads</h2>
                     <div className='frm'>
                         <img src={img1} alt="" className='img1' />

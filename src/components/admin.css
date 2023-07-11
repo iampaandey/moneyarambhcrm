@@ -24,6 +24,32 @@
     background-color: aliceblue;
     border-radius: 10px;
 }
+.tkn{
+    display: inline-flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.frm1{
+    margin-top: 10px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    row-gap: 50px;
+    column-gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+.bx{
+    background-color: white;
+    padding: 15px;
+    border-radius: 20px;
+    margin: 0px;
+}
+.img2{
+    width: 150px;
+}
 .pl{
     width: 20px;
 }

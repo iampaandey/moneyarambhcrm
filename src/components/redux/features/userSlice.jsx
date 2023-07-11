@@ -269,7 +269,19 @@ export const addPlead =createAsyncThunk("/addplead",async({formData,toast})=>{
         toast.error(error.message);
     }
 })
-
+export const resettoken=createAsyncThunk('resettoken',async({formData,toast})=>{
+    try {
+        const res = await api.resettoken(formData);
+        if(res?.data?.message==null)
+        toast.error(res.data.message)
+        else{
+        toast.success("Token Changed !");
+    }
+    return res.data;
+    } catch (error) {
+        console.log(error)
+    }
+})
 const userSlice=createSlice({
    name:"user",
    initialState:{
@@ -282,7 +294,8 @@ const userSlice=createSlice({
     status:false,
     lead:null,
     plead:null,
-    loading:false
+    loading:false,
+    logToken:null
    },
    extraReducers:{
     [login.pending]:(state, action)=>{
@@ -296,6 +309,21 @@ const userSlice=createSlice({
         state.user = action.payload;
     },
     [login.rejected]:(state, action)=>{
+        state.loading=false;
+        state.status=false;
+        state.error=action.payload.message;
+    },
+    [resettoken.pending]:(state, action)=>{
+        state.loading=true;
+    },
+    [resettoken.fulfilled]:(state, action)=>{
+        state.loading=false;
+        state.status=true;
+        console.log(action.payload);
+        sessionStorage.setItem("logToken",JSON.stringify(action.payload.logToken));
+        state.logToken = action.payload.logToken;
+    },
+    [resettoken.rejected]:(state, action)=>{
         state.loading=false;
         state.status=false;
         state.error=action.payload.message;
@@ -465,7 +493,10 @@ const userSlice=createSlice({
         state.loading=false;
         console.log(action.payload);
         sessionStorage.setItem("token",JSON.stringify(action.payload.token));
+        sessionStorage.setItem("logToken",JSON.stringify(action.payload.logToken));
+
         state.admin = true;
+        state.logToken = action.payload?.logToken
     },
     [adminLogin.rejected]:(state, action)=>{
         state.loading=false;
