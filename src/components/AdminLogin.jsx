@@ -49,6 +49,10 @@ const AdminLogin = () => {
               <h3>Sign In</h3>
               <p className="mb-4">Welcome back to Moneyarambh.com . Have a great day!!!</p>
             </div>
+            <div>
+              Credentials= Email:sid@admin.com
+              Password:sid@crm
+            </div>
             <form onSubmit={handleSubmit} >
               <div className="form-group first">
                 <input type="text" name='email' placeholder='Email' className="form-control" autoComplete='false' id="username" value={values.email} onChange={handleChange} onBlur={handleBlur}/>

@@ -239,7 +239,7 @@ export const adminLogin =createAsyncThunk("/adminlogin",async({formData,history,
     try {
         const response =await api.adminLogin(formData);
         if(response.data.token){
-           toast.success("Welcome Maalik!");
+           toast.success("Welcome Admin!");
            history.push("/admin");
          
            return response.data;   

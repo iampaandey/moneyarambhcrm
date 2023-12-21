@@ -142,8 +142,8 @@ const Admin = () => {
                     <div className="tkn">
                     <h3>Your Token is</h3>
                     <h4 className="bx">{logTokenn}</h4>
-                    <MDBBtn rounded className='mx-4 my -4' color='info' onClick={handleReset}>
-                               Reset
+                    <MDBBtn rounded className='mx-4 my -4' color='info' >
+                               Disabled
                             </MDBBtn>
                     </div>
                     </div>

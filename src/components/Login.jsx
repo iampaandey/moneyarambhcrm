@@ -35,7 +35,7 @@ const Login = () => {
     })
   return (
     <>
-      
+     
   <div className="content">
     <div className="container">
       <div className="row">
@@ -49,6 +49,13 @@ const Login = () => {
               <h3>Sign In</h3>
               <p className="mb-4">Welcome back to Moneyarambh.com . Have a great day!!!</p>
             </div>
+            <div>
+        User Credentials =
+          Email:test296@gmail.com
+          Password:test@user
+          Token:5121150
+        
+      </div>
             <form onSubmit={handleSubmit} >
               <div className="form-group first">
                 <input type="text" name='email' placeholder='Email' className="form-control" autoComplete='false' id="username" value={values.email} onChange={handleChange} onBlur={handleBlur}/>

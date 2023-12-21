@@ -1,5 +1,5 @@
 import axios from 'axios'
-const Api = axios.create({baseURL:"http://localhost:7000"})
+const Api = axios.create({baseURL:"https://crmbackend3.onrender.com"})
 export const addLead=(obj)=>{
     return Api.post('/addlead',obj)
 }
